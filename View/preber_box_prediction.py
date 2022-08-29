@@ -10,11 +10,19 @@ Builder.load_file("kv/preber_box_prediction.kv")
 class PreberBoxPrediction(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.invisibility_box_left = RangeBox("")
-        self.input_box = TextInput(multiline=False, font_size=130, halign="center")
-        self.invisibility_box_right = RangeBox("")
-        self.add_widget(self.invisibility_box_left)
+        self.invisible_box_left = RangeBox("")
+        self.input_box = TextInput(multiline=False, font_size=100, halign="center", size_hint=(1.5, 1))
+        self.input_box.bind(on_text_validate=self.on_enter)
+        self.invisible_box_right = RangeBox("")
+        self.add_widget(self.invisible_box_left)
         self.add_widget(self.input_box)
-        self.add_widget(self.invisibility_box_right)
+        self.add_widget(self.invisible_box_right)
+
+    def on_enter(self, value):
+        self.parent.forward_game(int(value.text))
+        value.text = ""
+
+
+
 
 

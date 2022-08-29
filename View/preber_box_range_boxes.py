@@ -8,7 +8,7 @@ class PreberBoxRangeBoxes(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.min_box = RangeBox("1")
-        self.real_number = RangeBox("45")
+        self.real_number = RangeBox("?")
         self.max_box = RangeBox("100")
         self.add_widget(self.min_box)
         self.add_widget(self.real_number)
