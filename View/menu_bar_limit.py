@@ -8,7 +8,6 @@ class MenuBarLimit(DropDown):
         self.add_limit_buttons_to_children()
         self.max_height = 150
 
-
     def add_limit_buttons_to_children(self):
         for limit in range(100, 5100, 100):
             btn = Button(text=str(limit), size_hint_y=None, height=44)
@@ -18,5 +17,6 @@ class MenuBarLimit(DropDown):
             self.add_widget(btn)
 
     def pressed(self, value):
-        value.parent.parent.parent.children[1].children[0].children[0].children[0].text = value.text
         value.parent.parent.parent.children[1].children[0].start_game()
+        value.parent.parent.parent.children[1].children[0].children[0].children[0].text = value.text
+
