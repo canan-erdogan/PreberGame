@@ -16,6 +16,7 @@ class HistoryViewBoxPreberHistory(GridLayout):
         self.predict_viewmodel = PredictViewmodel()
         self.add_predict()
 
+
     def add_predict(self):
         for predict in self.predict_viewmodel.predicts:
             self.add_widget(HistoryViewBoxPreberHistoryPredictBox(predict.predict_number, predict.predict_count))

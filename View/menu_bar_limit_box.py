@@ -3,8 +3,8 @@ from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from View.menu_bar_limit import MenuBarLimit
-Builder.load_file("C:\\Users\\QueFact\\PycharmProjects\\PreberGame\\View\\kv\\menu_bar_limit_box.kv")
-#  canan burayı değiştir diğer kv builderlarına göre
+Builder.load_file("C:\\Users\\QueFact\\Documents\\GitHub\\PreberGame\\View\\kv\\menu_bar_limit_box.kv")
+
 
 
 class MenuBarLimitBox(BoxLayout):

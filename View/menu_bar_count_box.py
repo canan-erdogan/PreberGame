@@ -1,8 +1,8 @@
-from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 
-Builder.load_file("C:\\Users\\QueFact\\PycharmProjects\\PreberGame\\View\\kv\\menu_bar_count_box.kv")
+Builder.load_file("C:\\Users\\QueFact\\Documents\\GitHub\\PreberGame\\View\\kv\\menu_bar_count_box.kv")
 
 
 class MenuBarCountBox(BoxLayout):

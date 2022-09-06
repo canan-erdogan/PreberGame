@@ -2,10 +2,9 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.uix.label import Label
-
 from View.menu_bar_modes import MenuBarModes
 
-Builder.load_file("C:\\Users\\QueFact\\PycharmProjects\\PreberGame\\View\\kv\\menu_bar_modes_box.kv")
+Builder.load_file("C:\\Users\\QueFact\\Documents\\GitHub\\PreberGame\\View\\kv\\menu_bar_modes_box.kv")
 
 
 class MenuBarModesBox(BoxLayout):

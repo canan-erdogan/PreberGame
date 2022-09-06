@@ -27,7 +27,7 @@ class PredictService:
 
     @staticmethod
     def read_predict_from_csv():
-        if os.path.exists("C:\\Users\\QueFact\\PycharmProjects\\PreberGame\\Service\\predict.csv"):
-            reader = open("C:\\Users\\QueFact\\PycharmProjects\\PreberGame\\Service\\predict.csv", "r", encoding='UTF8')
+        if os.path.exists("C:\\Users\\QueFact\\Documents\\GitHub\\PreberGame\\Service\\predict.csv"):
+            reader = open("C:\\Users\\QueFact\\Documents\\GitHub\\PreberGame\\Service\\predict.csv", "r", encoding='UTF8')
             return csv.DictReader(reader)
         return {}
