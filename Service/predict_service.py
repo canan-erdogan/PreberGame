@@ -3,16 +3,17 @@ import os.path
 
 
 class PredictService:
-    def __init__(self, predict_number, predict_count):
+    def __init__(self, predict_number, predict_count, predict_limit):
         self.predict_number = predict_number
         self.predict_count = predict_count
+        self.predict_limit = predict_limit
         if not os.path.exists("../Service/predict.csv"):
             self.create_csv()
         self.append_predict_to_csv()
 
 
     def create_csv(self):
-        header = ["predict_number", "predict_count"]
+        header = ["predict_number", "predict_count", "predict_limit"]
         self.write_to_csv(header)
 
     @staticmethod
@@ -22,7 +23,7 @@ class PredictService:
 
 
     def append_predict_to_csv(self):
-        data = [self.predict_number, self.predict_count]
+        data = [self.predict_number, self.predict_count, self.predict_limit]
         self.write_to_csv(data)
 
     @staticmethod

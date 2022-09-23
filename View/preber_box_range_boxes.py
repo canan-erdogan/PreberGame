@@ -14,3 +14,4 @@ class PreberBoxRangeBoxes(BoxLayout):
         self.add_widget(self.real_number)
         self.add_widget(self.max_box)
 
+
