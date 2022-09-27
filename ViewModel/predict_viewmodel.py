@@ -4,7 +4,7 @@ from Service.predict_service import PredictService
 
 class PredictViewmodel:
     def __init__(self):
-        self.predicts= []
+        self.predicts = []
         self.set_predicts_from_csv()
 
     def set_predicts_from_csv(self):

@@ -1,7 +1,7 @@
+from View.preber_box import PreberBox
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.anchorlayout import AnchorLayout
-from View.preber_box import PreberBox
 
 Builder.load_file("kv/prebergame.kv")
 

@@ -1,8 +1,6 @@
 from kivy.uix.button import Button
 from kivy.uix.dropdown import DropDown
 
-from Service.predict_service import PredictService
-
 
 class MenuBarModes(DropDown):
     def __init__(self, **kwargs):
@@ -39,7 +37,6 @@ class MenuBarModes(DropDown):
                     child.disabled = True
                 else:
                     child.disabled = False
-
 
 
 

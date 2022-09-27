@@ -1,9 +1,7 @@
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
-
 from View.prediction_range_box import PredictionRangeBox
-from range_box import RangeBox
 
 Builder.load_file("kv/preber_box_prediction.kv")
 

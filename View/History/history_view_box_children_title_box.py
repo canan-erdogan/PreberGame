@@ -8,8 +8,9 @@ class HistoryViewBoxChildrenTitleBox(BoxLayout):
         super().__init__(**kwargs)
         self.size_hint = 1, 0.1
         self.add_widget(Label(text="PREDİCT NUMBER", font_size=13))
-        label1 = Label(text="PREDİCT COUNT", font_size=13)
-        self.add_widget(label1)
+        self.add_widget(Label(text="PREDİCT COUNT", font_size=13))
+        self.add_widget(Label(text="PREDİCT LİMİT", font_size=13))
+
 
 
 
