@@ -1,5 +1,8 @@
 from kivy.uix.button import Button
 from kivy.uix.dropdown import DropDown
+
+from View.History.history_view_box_children_preber_history_predict_box import \
+    HistoryViewBoxChildrenPreberHistoryPredictBox
 from ViewModel.predict_viewmodel import PredictViewmodel
 
 
@@ -18,8 +21,24 @@ class HistoryViewBoxLeftBoxPredictRecordsBox(DropDown):
             btn.bind(on_press=self.pressed)
             self.add_widget(btn)
 
-
     def pressed(self, value):
-        if value.text =="PREDİCT RECORDS":
-            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].clear_widgets(self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].children)
-            
+        if value.text == "PREDİCT RECORDS":
+            predict_viewmodel1 = self.parent.children[1].children[0].predict_viewmodel
+            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                0].clear_widgets(
+                self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                    0].children)
+            for child in self.children[0].children:
+                if child.text != "TURN BACK":
+                    child.disabled = True
+                else:
+                    child.disabled = False
+            predict_records = predict_viewmodel1.predict_records_dropdown()
+            for predict in predict_records:
+                self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                    0].add_widget(
+                    HistoryViewBoxChildrenPreberHistoryPredictBox(predict_records[predict][1],
+                                                                  predict_records[predict][0],
+                                                                  predict))
+
+

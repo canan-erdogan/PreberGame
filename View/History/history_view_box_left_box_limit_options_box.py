@@ -13,7 +13,6 @@ class HistoryViewBoxLeftBoxLimitOptionsBox(DropDown):
         self.max_height = 150
         self.predict_viewmodel = PredictViewmodel()
 
-
     def add_limit_options_to_children(self):
         btn = Button(text=str("TURN BACK"), size_hint_y=None, height=44)
         if btn.text == "TURN BACK":
@@ -36,21 +35,25 @@ class HistoryViewBoxLeftBoxLimitOptionsBox(DropDown):
                     child.disabled = True
                 else:
                     child.disabled = False
-            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].clear_widgets(self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].children)
-            predict_array = self.predict_viewmodel.predicts
-            size1 = len(predict_array)
-            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].selectionSort(predict_array, size1)
+            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                0].clear_widgets(
+                self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                    0].children)
             for predict in self.predict_viewmodel.predicts:
                 if str(predict.predict_limit) == value.text:
-                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].add_widget(
+                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                        0].add_widget(
                         HistoryViewBoxChildrenPreberHistoryPredictBox(predict.predict_number, predict.predict_count,
-                                                                    predict.predict_limit))
+                                                                      predict.predict_limit))
         elif value.text == "TURN BACK":
             for child in self.children[0].children:
                 if child.text == "TURN BACK":
                     child.disabled = True
                 else:
                     child.disabled = False
-                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].clear_widgets(self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].children)
-                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[0].add_predict()
-
+                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                        0].clear_widgets(
+                        self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                            0].children)
+                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                        0].add_predict()
