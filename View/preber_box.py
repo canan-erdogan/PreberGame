@@ -1,6 +1,8 @@
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from View.History.history_view_box import HistoryViewBox
+from View.History.history_view_box_children_preber_history_predict_box import \
+    HistoryViewBoxChildrenPreberHistoryPredictBox
 from View.menu_bar import MenuBar
 from ViewModel.predict_viewmodel import PredictViewmodel
 from ViewModel.random_number_viewmodel import RandomNumberViewmodel
@@ -55,5 +57,10 @@ class PreberBox(BoxLayout):
         self.remove_widget(self.children[0])
         self.add_widget(PreberBoxPrediction())
         self.add_widget(PreberBoxRangeBoxes())
+
+    def add_predict(self):
+        for predict in self.predict_viewmodel.predicts:
+            self.children[0].children[1].children[0].children[0].children[0].add_widget(
+                HistoryViewBoxChildrenPreberHistoryPredictBox(predict.predict_number, predict.predict_count, predict.predict_limit))
 
 

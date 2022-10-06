@@ -6,6 +6,7 @@ class PredictViewmodel:
     def __init__(self):
         self.predicts = []
         self.set_predicts_from_csv()
+        self.limit_options_dropdown()
 
     def set_predicts_from_csv(self):
         for row in PredictService.read_predict_from_csv():
@@ -18,6 +19,9 @@ class PredictViewmodel:
         PredictService(predict.predict_number, predict.predict_count, predict.predict_limit)
 
     def predict_records_dropdown(self):
+        predict_array = self.predicts
+        size1 = len(predict_array)
+        PredictService.predict_records_selection_sort(predict_array, size1)
         return PredictService.predict_records_dropdown(self.predicts)
 
     def limit_options_dropdown(self):

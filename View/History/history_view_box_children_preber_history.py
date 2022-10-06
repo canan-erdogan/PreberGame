@@ -14,23 +14,6 @@ class HistoryViewBoxChildrenPreberHistory(GridLayout):
         self.padding = 10
         self.spacing = 10
         self.size_hint = (1, None)
-        self.predict_viewmodel = PredictViewmodel()
-        self.add_predict()
 
-
-    def PredictRecordsSelectionSort(self, array, size):
-        for ind in range(size):
-            min_index = ind
-
-            for j in range(ind + 1, size):
-                if array[j].predict_count < array[min_index].predict_count:
-                    min_index = j
-
-            (array[ind], array[min_index]) = (array[min_index], array[ind])
-
-    def add_predict(self):
-        for predict in self.predict_viewmodel.predicts:
-            self.add_widget(
-                HistoryViewBoxChildrenPreberHistoryPredictBox(predict.predict_number, predict.predict_count, predict.predict_limit))
 
 

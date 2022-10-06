@@ -11,7 +11,6 @@ class HistoryViewBoxLeftBoxLimitOptionsBox(DropDown):
         super().__init__(**kwargs)
         self.add_limit_options_to_children()
         self.max_height = 150
-        self.predict_viewmodel = PredictViewmodel()
 
     def add_limit_options_to_children(self):
         btn = Button(text=str("TURN BACK"), size_hint_y=None, height=44)
@@ -39,7 +38,7 @@ class HistoryViewBoxLeftBoxLimitOptionsBox(DropDown):
                 0].clear_widgets(
                 self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
                     0].children)
-            for predict in self.predict_viewmodel.predicts:
+            for predict in self.parent.children[1].children[0].predict_viewmodel.predicts:
                 if str(predict.predict_limit) == value.text:
                     self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
                         0].add_widget(

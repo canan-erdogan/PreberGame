@@ -44,7 +44,7 @@ class PredictService:
 
 
     @staticmethod
-    def limit_options_selection_sort(self, array, size):
+    def limit_options_selection_sort(array, size):
         for ind in range(size):
             min_index = ind
 
@@ -58,3 +58,15 @@ class PredictService:
 
             (array[ind], array[min_index]) = (array[min_index], array[ind])
 
+    @staticmethod
+    def predict_records_selection_sort(array, size):
+        for ind in range(size):
+            min_index = ind
+            for j in range(ind + 1, size):
+                if array[j].predict_limit < array[min_index].predict_limit:
+                    min_index = j
+                    for j in range(ind + 1, size):
+                        if array[j].predict_count < array[min_index].predict_count:
+                            min_index = j
+
+            (array[ind], array[min_index]) = (array[min_index], array[ind])

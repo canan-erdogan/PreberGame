@@ -11,7 +11,6 @@ class HistoryViewBoxLeftBoxPredictRecordsBox(DropDown):
         super().__init__(**kwargs)
         self.add_predict_records_to_children()
         self.max_height = 150
-        self.predict_viewmodel = PredictViewmodel()
 
     def add_predict_records_to_children(self):
         for predict_records in ["PREDİCT RECORDS", "TURN BACK"]:
@@ -40,5 +39,15 @@ class HistoryViewBoxLeftBoxPredictRecordsBox(DropDown):
                     HistoryViewBoxChildrenPreberHistoryPredictBox(predict_records[predict][1],
                                                                   predict_records[predict][0],
                                                                   predict))
-
-
+        else:
+            for child in self.children[0].children:
+                if child.text == "TURN BACK":
+                    child.disabled = True
+                else:
+                    child.disabled = False
+            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                0].clear_widgets(
+                self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                    0].children)
+            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                0].add_predict()

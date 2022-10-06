@@ -25,6 +25,8 @@ class MenuBarModes(DropDown):
             value.parent.parent.parent.children[1].children[0].start_game()
         elif value.text == "HISTORY":
             value.parent.parent.parent.children[1].children[0].add_history_view()
+            value.parent.parent.parent.children[1].children[0].add_predict()
+
             for child in self.children[0].children:
                 if child.text != "PREBER GAME":
                     child.disabled = True
