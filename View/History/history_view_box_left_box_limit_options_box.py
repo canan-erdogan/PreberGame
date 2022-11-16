@@ -50,9 +50,8 @@ class HistoryViewBoxLeftBoxLimitOptionsBox(DropDown):
                     child.disabled = True
                 else:
                     child.disabled = False
+                self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
+                    0].clear_widgets(
                     self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
-                        0].clear_widgets(
-                        self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
-                            0].children)
-                    self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
-                        0].add_predict()
+                        0].children)
+                self.parent.children[1].children[0].add_predict()

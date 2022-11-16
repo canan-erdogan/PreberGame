@@ -49,5 +49,4 @@ class HistoryViewBoxLeftBoxPredictRecordsBox(DropDown):
                 0].clear_widgets(
                 self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
                     0].children)
-            self.parent.children[1].children[0].children[0].children[1].children[0].children[0].children[
-                0].add_predict()
+            self.parent.children[1].children[0].add_predict()

@@ -46,6 +46,7 @@ class PreberBox(BoxLayout):
             self.children[2].children[2].children[0].children[0].text = str(int(self.children[2].children[2].children[0].children[0].text) + 1)
         else:
             self.children[0].real_number.text = str(predict_number)
+            self.children[2].children[2].children[0].children[0].text = str(int(self.children[2].children[2].children[0].children[0].text) + 1)
             self.predict_viewmodel.append_predict_to_predicts(predict_number, self.children[2].children[2].children[0].children[0].text, self.children[2].children[0].dropdown_button.text)
 
     def add_history_view(self):
